@@ -1,4 +1,7 @@
-<%= @doctor.appointments do |t|%>
-<%= t.appointment_datetime%>
-<%= link_to @doctor.patient_name patient_path(@doctor.patient)%>
+<h1><%= @doctor.name %></h1>
+
+<ul>
+<%= @doctor.appointments.each do |t|%>
+<li><%= t.clear_date%><br>
+<%= link_to t.patient_name patient_path(@t.patient)%></li>
 <%end%>
